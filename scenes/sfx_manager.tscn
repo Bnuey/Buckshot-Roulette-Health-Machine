@@ -5,14 +5,15 @@
 [ext_resource type="AudioStream" uid="uid://bqxp5se0uab7e" path="res://assets/sound/health counter bootup.ogg" id="3_h2k0q"]
 [ext_resource type="AudioStream" uid="uid://d0pjg8w3fh6gu" path="res://assets/sound/health counter reduce health.ogg" id="4_df6my"]
 [ext_resource type="AudioStream" uid="uid://d2gdqtoe2nbh5" path="res://assets/sound/round indicator shut down.ogg" id="5_xl5ak"]
+[ext_resource type="AudioStream" uid="uid://vheh1o1816y1" path="res://assets/sound/signature machine key press.ogg" id="6_byfxn"]
 
-[node name="SFXManager" type="Node" unique_id=1666793803 node_paths=PackedStringArray("beep", "bootup", "shutdown", "health_loss", "winner")]
+[node name="SFXManager" type="Node" unique_id=1666793803 node_paths=PackedStringArray("beep", "bootup", "shutdown", "health_loss", "press")]
 script = ExtResource("1_phwnr")
 beep = NodePath("Beep")
 bootup = NodePath("Bootup")
 shutdown = NodePath("Shutdown")
 health_loss = NodePath("HealthLoss")
-winner = NodePath("")
+press = NodePath("Press")
 
 [node name="Beep" type="AudioStreamPlayer" parent="." unique_id=295550875]
 stream = ExtResource("2_byfxn")
@@ -29,3 +30,6 @@ volume_db = -12.124
 
 [node name="Shutdown" type="AudioStreamPlayer" parent="." unique_id=215824556]
 stream = ExtResource("5_xl5ak")
+
+[node name="Press" type="AudioStreamPlayer" parent="." unique_id=49443794]
+stream = ExtResource("6_byfxn")

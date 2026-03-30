@@ -46,4 +46,4 @@ func _on_start_pressed() -> void:
 		players[i].in_game = true
 	
 	hide()
-	global.player_entry_complete.emit()
+	global.start_new_game()

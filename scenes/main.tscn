@@ -37,7 +37,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("WinText:visible")
+tracks/0/path = NodePath("WinParent/WinText:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -117,6 +117,18 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(161, 150)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("WinParent:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_a8y0u"]
@@ -367,7 +379,7 @@ length = 4.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("WinText:visible")
+tracks/0/path = NodePath("WinParent/WinText:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -418,6 +430,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("WinParent:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ya4ey"]
 _data = {
@@ -447,7 +471,7 @@ grow_vertical = 2
 theme = ExtResource("1_0wfyh")
 script = ExtResource("2_sugp2")
 players = Array[ExtResource("8_a8y0u")]([ExtResource("9_jkv2x"), ExtResource("10_jbj1t"), ExtResource("11_muem4"), ExtResource("12_dp3eg")])
-round_display = NodePath("../WinDisplay")
+round_display = NodePath("../RoundOverDisplay")
 player_name_labels = [NodePath("NameDisplay/Player1_NameContainer/Player1_Name_Label"), NodePath("NameDisplay/Player2_NameContainer/Player2_Name_Label"), NodePath("NameDisplay2/Player3_NameContainer/Player3_Name_Label"), NodePath("NameDisplay2/Player4_NameContainer/Player4_Name_Label")]
 health_containers = [NodePath("HealthDisplay/Player1_Health"), NodePath("HealthDisplay/Player2_Health"), NodePath("HealthDisplay2/Player3_Health"), NodePath("HealthDisplay2/Player4_Health")]
 timer = NodePath("Timer")
@@ -594,7 +618,8 @@ visible_characters = 7
 
 [node name="Timer" type="Timer" parent="HealthDisplay" unique_id=1147769158]
 
-[node name="WinDisplay" type="Control" parent="." unique_id=1231093158 node_paths=PackedStringArray("win_anim", "win_label", "DON_UI", "DON_label", "DON_score", "DON_yes", "DON_no", "DON", "DON_show", "DON_hide", "timer")]
+[node name="RoundOverDisplay" type="Control" parent="." unique_id=1231093158 node_paths=PackedStringArray("win_anim", "win_label", "DON_UI", "DON_label", "DON_score", "DON_yes", "DON_no", "DON", "DON_show", "DON_hide", "timer", "name_entry")]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -603,8 +628,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_0wfyh")
 script = ExtResource("9_ya4ey")
-win_anim = NodePath("WinAnim")
-win_label = NodePath("WinText")
+win_anim = NodePath("WinParent/WinAnim")
+win_label = NodePath("WinParent/WinText")
 DON_UI = NodePath("DON")
 DON_label = NodePath("DON/DoubleOrNothing")
 DON_score = NodePath("DON/DON_Money_Label")
@@ -614,8 +639,50 @@ DON = NodePath("../Audio/Animator/DON")
 DON_show = NodePath("../Audio/Animator/DON_Show")
 DON_hide = NodePath("../Audio/Animator/DON_Hide")
 timer = NodePath("Timer")
+name_entry = NodePath("../PlayerEntry")
 
-[node name="WinText" type="Label" parent="WinDisplay" unique_id=1147704646]
+[node name="RoundDisplay" type="TextureRect" parent="RoundOverDisplay" unique_id=1247858587]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.0
+offset_top = -116.5
+offset_right = 176.0
+offset_bottom = 116.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_jkv2x")
+
+[node name="Indicator" type="TextureRect" parent="RoundOverDisplay/RoundDisplay" unique_id=155390755]
+self_modulate = Color(0.8666667, 0.99607843, 0.85882354, 1)
+layout_mode = 0
+offset_left = 161.0
+offset_top = 150.0
+offset_right = 194.00003
+offset_bottom = 183.0
+texture = ExtResource("13_jbj1t")
+expand_mode = 1
+
+[node name="WinParent" type="Control" parent="RoundOverDisplay" unique_id=946634181]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WinText" type="Label" parent="RoundOverDisplay/WinParent" unique_id=1147704646]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -634,37 +701,12 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="WinAnim" type="AnimationPlayer" parent="WinDisplay" unique_id=356875386]
+[node name="WinAnim" type="AnimationPlayer" parent="RoundOverDisplay/WinParent" unique_id=356875386]
+root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_ya4ey")
 
-[node name="RoundDisplay" type="TextureRect" parent="WinDisplay" unique_id=1247858587]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -176.0
-offset_top = -116.5
-offset_right = 176.0
-offset_bottom = 116.5
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("12_jkv2x")
-
-[node name="Indicator" type="TextureRect" parent="WinDisplay/RoundDisplay" unique_id=155390755]
-self_modulate = Color(0.8666667, 0.99607843, 0.85882354, 1)
-layout_mode = 0
-offset_left = 161.0
-offset_top = 150.0
-offset_right = 194.00003
-offset_bottom = 183.0
-texture = ExtResource("13_jbj1t")
-expand_mode = 1
-
-[node name="DON" type="VBoxContainer" parent="WinDisplay" unique_id=2016151679]
-visible = false
+[node name="DON" type="VBoxContainer" parent="RoundOverDisplay" unique_id=2016151679]
+custom_minimum_size = Vector2(0, 276)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -678,9 +720,10 @@ offset_bottom = 109.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_0wfyh")
+alignment = 1
 
-[node name="DoubleOrNothing" type="Label" parent="WinDisplay/DON" unique_id=2094060975]
-visible = false
+[node name="DoubleOrNothing" type="Label" parent="RoundOverDisplay/DON" unique_id=2094060975]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 90
 text = "double or nothing?"
@@ -688,29 +731,30 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="DON_Money_Label" type="Label" parent="WinDisplay/DON" unique_id=701121851]
+[node name="DON_Money_Label" type="Label" parent="RoundOverDisplay/DON" unique_id=701121851]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 90
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="DON_YesNo" type="HBoxContainer" parent="WinDisplay/DON" unique_id=1329065317]
+[node name="DON_YesNo" type="HBoxContainer" parent="RoundOverDisplay/DON" unique_id=1329065317]
 layout_mode = 2
 
-[node name="YesButton" type="Button" parent="WinDisplay/DON/DON_YesNo" unique_id=1584486982]
-visible = false
+[node name="YesButton" type="Button" parent="RoundOverDisplay/DON/DON_YesNo" unique_id=1584486982]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 text = "YES"
 
-[node name="NoButton" type="Button" parent="WinDisplay/DON/DON_YesNo" unique_id=1297191415]
-visible = false
+[node name="NoButton" type="Button" parent="RoundOverDisplay/DON/DON_YesNo" unique_id=1297191415]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 text = "NO"
 
-[node name="Timer" type="Timer" parent="WinDisplay" unique_id=1497161198]
+[node name="Timer" type="Timer" parent="RoundOverDisplay" unique_id=1497161198]
 one_shot = true
 
 [node name="PlayerEntry" parent="." unique_id=1679587246 node_paths=PackedStringArray("health_display") instance=ExtResource("1_eb6dy")]

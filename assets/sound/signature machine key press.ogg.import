@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://vheh1o1816y1"
+path="res://.godot/imported/signature machine key press.ogg-a0b0f31364f69de18d632bb934832802.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sound/signature machine key press.ogg"
+dest_files=["res://.godot/imported/signature machine key press.ogg-a0b0f31364f69de18d632bb934832802.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

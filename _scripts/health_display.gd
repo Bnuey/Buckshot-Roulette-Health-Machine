@@ -28,9 +28,12 @@ var active_player_count: int = 0
 		extra_players_shown = value
 		toggle_extra_players(extra_players_shown)
 
+var initial_setup: bool = true
+
 func _ready() -> void:
-	global.player_entry_complete.connect(bootup)
-	global.round_display_complete.connect(reset_round)
+	global.start_game.connect(bootup)
+	global.round_display_complete.connect(bootup)
+	global.reset_game.connect(_reset)
 	
 	for n in health_containers:
 		n.died.connect(player_died)
@@ -47,14 +50,25 @@ func bootup() -> void:
 	show()
 
 func setup() -> void:
+	if initial_setup: players_in_game.clear()
+	alive_players.clear()
+	
 	for n in players:
 		if n.in_game:
-			active_player_count += 1
-			alive_players.append(n)
-			players_in_game.append(n)
+			if initial_setup:
+				active_player_count += 1
+				players_in_game.append(n)
 		else:
 			sitting_out.append(n)
+	
+	initial_setup = false
+	for n in players_in_game:
+		alive_players.append(n)
+		n.health = 4
+		n.dead = false
+	
 	for i in active_player_count:
+		player_name_labels[i].visible_characters = -1
 		player_name_labels[i].text = players[i].player_name
 		health_containers[i].show()
 	
@@ -63,9 +77,8 @@ func setup() -> void:
 	
 	for n in sitting_out:
 		player_name_labels[n.id].text = ""
-		for c in health_containers[n.id].get_children():
-			c.queue_free()
 	
+	# Setup Health Containers
 	for n in health_containers:
 		if n.player.in_game:
 			n.setup()
@@ -100,18 +113,13 @@ func player_won(id: int) -> void:
 	round_display.play_win(player_name_labels[id].text)
 
 
-func reset_round() -> void:
+func _reset() -> void:
+	for n in players:
+		n.in_game = false
 	alive_players.clear()
-	for n in players_in_game:
-		alive_players.append(n)
-		n.health = 4
-		n.dead = false
-	for n in health_containers:
-		n.setup()
-	for i in active_player_count:
-		player_name_labels[i].visible_characters = -1
-	sfx.play_bootup()
-	await get_tree().create_timer(1).timeout
-	sfx.play_beep()
-	show()
+	players_in_game.clear()
+	sitting_out.clear()
+	initial_setup = true
+	extra_players_shown = false
+	active_player_count = 0
 	
