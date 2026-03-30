@@ -454,6 +454,7 @@ _data = {
 [node name="Control" type="CanvasLayer" unique_id=1470521949]
 
 [node name="Panel" type="PanelContainer" parent="." unique_id=252999617]
+modulate = Color(0.8666667, 0.99607843, 0.85882354, 1)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -463,6 +464,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_sgp6g")
 
 [node name="HealthDisplay" type="VBoxContainer" parent="." unique_id=215994268 node_paths=PackedStringArray("round_display", "player_name_labels", "health_containers", "timer", "player_34_control_nodes")]
 visible = false
+modulate = Color(0.8666667, 0.99607843, 0.85882354, 1)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -620,6 +622,7 @@ visible_characters = 7
 
 [node name="RoundOverDisplay" type="Control" parent="." unique_id=1231093158 node_paths=PackedStringArray("win_anim", "win_label", "DON_UI", "DON_label", "DON_score", "DON_yes", "DON_no", "DON", "DON_show", "DON_hide", "timer", "name_entry")]
 visible = false
+modulate = Color(0.8666667, 0.99607843, 0.85882354, 1)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -658,7 +661,6 @@ grow_vertical = 2
 texture = ExtResource("12_jkv2x")
 
 [node name="Indicator" type="TextureRect" parent="RoundOverDisplay/RoundDisplay" unique_id=155390755]
-self_modulate = Color(0.8666667, 0.99607843, 0.85882354, 1)
 layout_mode = 0
 offset_left = 161.0
 offset_top = 150.0
@@ -758,6 +760,7 @@ text = "NO"
 one_shot = true
 
 [node name="PlayerEntry" parent="." unique_id=1679587246 node_paths=PackedStringArray("health_display") instance=ExtResource("1_eb6dy")]
+modulate = Color(0.8666667, 0.99607843, 0.85882354, 1)
 offset_left = -127.5
 offset_top = -32.0
 offset_right = 127.5
@@ -781,6 +784,7 @@ volume_db = -12.124
 
 [node name="DON" type="AudioStreamPlayer" parent="Audio/Animator" unique_id=1857186895]
 stream = ExtResource("17_muem4")
+volume_db = -12.0
 
 [node name="DON_Show" type="AudioStreamPlayer" parent="Audio/Animator" unique_id=1148972088]
 stream = ExtResource("18_dp3eg")

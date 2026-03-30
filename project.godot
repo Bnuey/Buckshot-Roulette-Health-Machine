@@ -14,8 +14,8 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 [application]
 
-config/name="Buckshot-Health-Machine"
-config/version="0.1.0"
+config/name="Buckshot-Buddy"
+config/version="1.0.0"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -28,6 +28,7 @@ sfx="*uid://bxilppprs072r"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
