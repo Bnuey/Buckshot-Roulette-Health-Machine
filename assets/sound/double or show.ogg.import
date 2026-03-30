@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ceguqvgelbrk2"
+path="res://.godot/imported/double or show.ogg-10d5dbbe369891f336adfe568f6d71c6.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sound/double or show.ogg"
+dest_files=["res://.godot/imported/double or show.ogg-10d5dbbe369891f336adfe568f6d71c6.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

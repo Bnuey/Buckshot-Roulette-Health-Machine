@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="none" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <path id="path_1" d="M16 0L16 0L16 16L0 16L0 0L16 0Z" />
+    <rect id="rect_2" x="0" y="0" width="16" height="16" />
+    <clipPath id="clip_path_3">
+      <use xlink:href="#rect_2" />
+    </clipPath>
+  </defs>
+  <g id="pickup_trigger_component_3d" opacity="1" clip-path="url(#clip_path_3)">
+    <g>
+      <use xlink:href="#path_1" style="mix-blend-mode:normal;" />
+      <g>
+        <g id="corner" transform="translate(1.047 1)">
+          <path id="Rectangle" d="M2 0L2 0L2 4L0 4L0 1C0 0.44764 0.44764 0 1 0L2 0Z" style="fill:#E87779;mix-blend-mode:normal;" />
+          <rect id="Rectangle" width="2" height="2" style="fill:#E87779;fill-rule:evenodd;mix-blend-mode:normal;" transform="translate(2 0)" />
+        </g>
+        <g id="corner" transform="matrix(-1 0 0 1 15 1)">
+          <path id="Rectangle" d="M2 0L2 0L2 4L0 4L0 1C0 0.44764 0.44764 0 1 0L2 0Z" style="fill:#E87779;mix-blend-mode:normal;" />
+          <rect id="Rectangle" width="2" height="2" style="fill:#E87779;fill-rule:evenodd;mix-blend-mode:normal;" transform="translate(2 0)" />
+        </g>
+        <g id="corner" transform="matrix(-1 0 0 -1 15 15)">
+          <path id="Rectangle" d="M2 0L2 0L2 4L0 4L0 1C0 0.44764 0.44764 0 1 0L2 0Z" style="fill:#E87779;mix-blend-mode:normal;" />
+          <rect id="Rectangle" width="2" height="2" style="fill:#E87779;fill-rule:evenodd;mix-blend-mode:normal;" transform="translate(2 0)" />
+        </g>
+        <g id="corner" transform="matrix(1 0 0 -1 1 15)">
+          <path id="Rectangle" d="M2 0L2 0L2 4L0 4L0 1C0 0.44764 0.44764 0 1 0L2 0Z" style="fill:#E87779;mix-blend-mode:normal;" />
+          <rect id="Rectangle" width="2" height="2" style="fill:#E87779;fill-rule:evenodd;mix-blend-mode:normal;" transform="translate(2 0)" />
+        </g>
+        <path id="Oval Subtract" d="M3 0C1.34315 0 0 1.34315 0 3C0 4.65685 1.34315 6 3 6C4.65685 6 6 4.65685 6 3C6 1.34315 4.65685 0 3 0ZM3.58779 2.19098L3 1L2.41222 2.19098L1.09789 2.38197L2.04894 3.30902L1.82443 4.61803L3 4L4.17557 4.61803L3.95106 3.30902L4.90211 2.38197L3.58779 2.19098Z" style="fill:#E87779;fill-rule:evenodd;mix-blend-mode:normal;" transform="translate(5 5)" />
+      </g>
+    </g>
+  </g>
+</svg>

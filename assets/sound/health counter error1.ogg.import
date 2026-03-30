@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dhoexrtdrvxel"
+path="res://.godot/imported/health counter error1.ogg-10c7f96ec2abdb363eee79da2191caeb.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sound/health counter error1.ogg"
+dest_files=["res://.godot/imported/health counter error1.ogg-10c7f96ec2abdb363eee79da2191caeb.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

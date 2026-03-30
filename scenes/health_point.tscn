@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://ccfr3h8govvh3"]
+
+[ext_resource type="Texture2D" uid="uid://djykviuwrvob2" path="res://assets/sprites/defib charge png.png" id="1_u5y4i"]
+
+[node name="Health" type="TextureRect" unique_id=947194884]
+self_modulate = Color(0.8666667, 0.99607843, 0.85882354, 1)
+texture = ExtResource("1_u5y4i")

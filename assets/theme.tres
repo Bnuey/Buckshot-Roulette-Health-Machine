@@ -1,0 +1,28 @@
+[gd_resource type="Theme" format=3 uid="uid://c6jrhukfm0860"]
+
+[ext_resource type="FontFile" uid="uid://dkgcthxe1pnxc" path="res://assets/fonts/DOTMATRI.TTF" id="1_5x3i2"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_o5qli"]
+color = Color(0.8666667, 0.99607843, 0.85882354, 1)
+thickness = 10
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_5x3i2"]
+color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_sugp2"]
+content_margin_left = 0.0
+content_margin_top = 4.0
+content_margin_right = 0.0
+content_margin_bottom = 4.0
+color = Color(0.8666667, 0.99607843, 0.85882354, 1)
+thickness = 10
+vertical = true
+
+[resource]
+HSeparator/styles/separator = SubResource("StyleBoxLine_o5qli")
+Invisible_VSeparator/base_type = &"VSeparator"
+Invisible_VSeparator/styles/separator = SubResource("StyleBoxLine_5x3i2")
+Label/colors/font_color = Color(0.8666667, 0.99607843, 0.85882354, 1)
+Label/font_sizes/font_size = 120
+Label/fonts/font = ExtResource("1_5x3i2")
+VSeparator/styles/separator = SubResource("StyleBoxLine_sugp2")

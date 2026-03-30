@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://byowhqx0h5wf1"]
+
+[ext_resource type="Texture2D" uid="uid://dlpqh4blma84r" path="res://assets/textures/gridbox/dev_orange_128.png" id="1_bg1l7"]
+
+[resource]
+albedo_texture = ExtResource("1_bg1l7")
+uv1_triplanar = true
+uv1_triplanar_sharpness = 150.0
+texture_filter = 0

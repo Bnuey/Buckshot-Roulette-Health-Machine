@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bxilppprs072r"]
+
+[ext_resource type="Script" uid="uid://c04wavlruithv" path="res://_scripts/SFXManager.gd" id="1_phwnr"]
+[ext_resource type="AudioStream" uid="uid://chviu4yjsyc27" path="res://assets/sound/health counter beep2.wav" id="2_byfxn"]
+[ext_resource type="AudioStream" uid="uid://bqxp5se0uab7e" path="res://assets/sound/health counter bootup.ogg" id="3_h2k0q"]
+[ext_resource type="AudioStream" uid="uid://d0pjg8w3fh6gu" path="res://assets/sound/health counter reduce health.ogg" id="4_df6my"]
+[ext_resource type="AudioStream" uid="uid://d2gdqtoe2nbh5" path="res://assets/sound/round indicator shut down.ogg" id="5_xl5ak"]
+
+[node name="SFXManager" type="Node" unique_id=1666793803 node_paths=PackedStringArray("beep", "bootup", "shutdown", "health_loss", "winner")]
+script = ExtResource("1_phwnr")
+beep = NodePath("Beep")
+bootup = NodePath("Bootup")
+shutdown = NodePath("Shutdown")
+health_loss = NodePath("HealthLoss")
+winner = NodePath("")
+
+[node name="Beep" type="AudioStreamPlayer" parent="." unique_id=295550875]
+stream = ExtResource("2_byfxn")
+volume_db = -16.371
+pitch_scale = 0.13
+
+[node name="Bootup" type="AudioStreamPlayer" parent="." unique_id=1907423398]
+stream = ExtResource("3_h2k0q")
+volume_db = -16.371
+
+[node name="HealthLoss" type="AudioStreamPlayer" parent="." unique_id=1429612997]
+stream = ExtResource("4_df6my")
+volume_db = -12.124
+
+[node name="Shutdown" type="AudioStreamPlayer" parent="." unique_id=215824556]
+stream = ExtResource("5_xl5ak")

@@ -1,0 +1,117 @@
+@tool
+class_name HealthDisplay
+extends VBoxContainer
+
+const HEALTH_SCENE: PackedScene = preload("res://scenes/health_point.tscn")
+
+
+@export_category("External Dependencies")
+@export var players: Array[Player]
+
+@export_group("Node Dependencies")
+@export var round_display: RoundDisplay
+@export var player_name_labels: Array[Label]
+@export var health_containers: Array[HealthContainer]
+var alive_players: Array[Player]
+var players_in_game: Array[Player]
+var sitting_out: Array[Player]
+var active_player_count: int = 0
+
+@export var timer: Timer
+
+@export_category("Player 3 & 4 Control Nodes")
+@export var player_34_control_nodes: Array[Control]
+@export var extra_players_shown: bool:
+	get:
+		return extra_players_shown
+	set(value):
+		extra_players_shown = value
+		toggle_extra_players(extra_players_shown)
+
+func _ready() -> void:
+	global.player_entry_complete.connect(bootup)
+	global.round_display_complete.connect(reset_round)
+	
+	for n in health_containers:
+		n.died.connect(player_died)
+
+func toggle_extra_players(state: bool) -> void:
+	for n in player_34_control_nodes:
+		n.visible = state
+
+func bootup() -> void:
+	setup()
+	sfx.play_bootup()
+	await get_tree().create_timer(1).timeout
+	sfx.play_beep()
+	show()
+
+func setup() -> void:
+	for n in players:
+		if n.in_game:
+			active_player_count += 1
+			alive_players.append(n)
+			players_in_game.append(n)
+		else:
+			sitting_out.append(n)
+	for i in active_player_count:
+		player_name_labels[i].text = players[i].player_name
+		health_containers[i].show()
+	
+	if active_player_count > 2:
+		extra_players_shown = true
+	
+	for n in sitting_out:
+		player_name_labels[n.id].text = ""
+		for c in health_containers[n.id].get_children():
+			c.queue_free()
+	
+	for n in health_containers:
+		if n.player.in_game:
+			n.setup()
+
+func _process(_delta: float) -> void:
+	if Engine.is_editor_hint(): return
+	for i in active_player_count:
+		if Input.is_action_just_pressed("player_" + str(i + 1)):
+			if not players[i].in_game: return
+			if players[i].dead: return
+			
+			@warning_ignore("standalone_ternary")
+			health_containers[i].add_health() if Input.is_action_pressed("modifier") else health_containers[i].remove_health()
+
+
+func player_died(player: Player) -> void:
+	print("Player %s died" % [player.id])
+	player.dead = true
+	player_name_labels[player.id].visible_characters = 0
+	alive_players.erase(player)
+	
+	if alive_players.size() <= 1:
+		player_won(alive_players[0].id)
+
+func player_won(id: int) -> void:
+	timer.start(.5)
+	global.current_round += 1
+	await timer.timeout
+	sfx.play_shutdown()
+	hide()
+	await get_tree().process_frame
+	round_display.play_win(player_name_labels[id].text)
+
+
+func reset_round() -> void:
+	alive_players.clear()
+	for n in players_in_game:
+		alive_players.append(n)
+		n.health = 4
+		n.dead = false
+	for n in health_containers:
+		n.setup()
+	for i in active_player_count:
+		player_name_labels[i].visible_characters = -1
+	sfx.play_bootup()
+	await get_tree().create_timer(1).timeout
+	sfx.play_beep()
+	show()
+	

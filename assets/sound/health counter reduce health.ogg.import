@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d0pjg8w3fh6gu"
+path="res://.godot/imported/health counter reduce health.ogg-67076133d402a66a2d085c1d603bca2d.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sound/health counter reduce health.ogg"
+dest_files=["res://.godot/imported/health counter reduce health.ogg-67076133d402a66a2d085c1d603bca2d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

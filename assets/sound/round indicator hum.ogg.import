@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ddaagp6ewuhag"
+path="res://.godot/imported/round indicator hum.ogg-103dd55978038bc55735888470ff9d0e.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sound/round indicator hum.ogg"
+dest_files=["res://.godot/imported/round indicator hum.ogg-103dd55978038bc55735888470ff9d0e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

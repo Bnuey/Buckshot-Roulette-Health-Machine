@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b75477idvsgf5"
+path="res://.godot/imported/double or nothing bootup.ogg-774643e7e56d65bff0e79be9bd7638be.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sound/double or nothing bootup.ogg"
+dest_files=["res://.godot/imported/double or nothing bootup.ogg-774643e7e56d65bff0e79be9bd7638be.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

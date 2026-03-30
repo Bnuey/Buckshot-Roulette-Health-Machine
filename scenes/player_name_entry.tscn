@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://f0dfdjrk27uf"]
+
+[ext_resource type="Script" uid="uid://c01lrs6agoydv" path="res://_scripts/player_selection_panel.gd" id="1_dmt0o"]
+[ext_resource type="FontFile" uid="uid://dkgcthxe1pnxc" path="res://assets/fonts/DOTMATRI.TTF" id="2_y7yvm"]
+[ext_resource type="Script" uid="uid://wjelv7auk0s2" path="res://_scripts/player.gd" id="3_uom76"]
+[ext_resource type="Resource" uid="uid://cba7pa0ts5uhn" path="res://resource/player_1.tres" id="4_ulb7g"]
+[ext_resource type="Resource" uid="uid://dh5uc00bwm7na" path="res://resource/player_2.tres" id="5_2al32"]
+[ext_resource type="Resource" uid="uid://8dba7ikeqm6x" path="res://resource/player_3.tres" id="6_6ypnp"]
+[ext_resource type="Resource" uid="uid://db1mbjwcnqd4t" path="res://resource/player_4.tres" id="7_tq2fd"]
+
+[sub_resource type="Theme" id="Theme_y7yvm"]
+default_font = ExtResource("2_y7yvm")
+default_font_size = 20
+
+[node name="VBoxContainer2" type="VBoxContainer" unique_id=1821445666 node_paths=PackedStringArray("add_button", "remove_button", "start_button", "player_name_parent")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -109.0
+offset_top = -20.0
+offset_right = 109.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_y7yvm")
+script = ExtResource("1_dmt0o")
+players = Array[ExtResource("3_uom76")]([ExtResource("4_ulb7g"), ExtResource("5_2al32"), ExtResource("6_6ypnp"), ExtResource("7_tq2fd")])
+add_button = NodePath("ButtonsVBox/AddRemoveHBox/Add_Button")
+remove_button = NodePath("ButtonsVBox/AddRemoveHBox/Remove_Button")
+start_button = NodePath("ButtonsVBox/StartButton")
+player_name_parent = NodePath("PlayerContainer")
+
+[node name="PlayerContainer" type="VBoxContainer" parent="." unique_id=913906787]
+layout_mode = 2
+
+[node name="ButtonsVBox" type="VBoxContainer" parent="." unique_id=295331578]
+layout_mode = 2
+
+[node name="AddRemoveHBox" type="HBoxContainer" parent="ButtonsVBox" unique_id=1897803402]
+layout_mode = 2
+
+[node name="Add_Button" type="Button" parent="ButtonsVBox/AddRemoveHBox" unique_id=729662923]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Add Player"
+
+[node name="Remove_Button" type="Button" parent="ButtonsVBox/AddRemoveHBox" unique_id=1393551043]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Remove Player"
+
+[node name="StartButton" type="Button" parent="ButtonsVBox" unique_id=586149819]
+layout_mode = 2
+text = "Start"

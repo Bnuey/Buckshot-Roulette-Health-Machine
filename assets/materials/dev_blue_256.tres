@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cse554ke5k3ev"]
+
+[ext_resource type="Texture2D" uid="uid://brmdpd63fumj7" path="res://assets/textures/gridbox/dev_blue_256.png" id="1_3n6cc"]
+
+[resource]
+albedo_texture = ExtResource("1_3n6cc")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 150.0
+texture_filter = 0

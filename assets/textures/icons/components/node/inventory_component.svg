@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="none" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <path id="path_1" d="M16 0L16 0L16 16L0 16L0 0L16 0Z" />
+    <rect id="rect_2" x="0" y="0" width="16" height="16" />
+    <clipPath id="clip_path_3">
+      <use xlink:href="#rect_2" />
+    </clipPath>
+  </defs>
+  <g id="inventory_component" opacity="1" clip-path="url(#clip_path_3)">
+    <g>
+      <use xlink:href="#path_1" style="mix-blend-mode:normal;" />
+      <g>
+        <path id="Shape" d="M4 0L0 0L0 4C0 5.10472 0.89528 6 2 6L8 6C9.10472 6 10 5.10472 10 4L10 0L6 0C6 0.55236 5.55236 1 5 1C4.44764 1 4 0.55236 4 0Z" style="fill:#FFFFFF;fill-rule:evenodd;mix-blend-mode:normal;" transform="translate(3 7)" />
+        <path id="Shape" d="M10 2C10 0.89528 9.10472 0 8 0L2 0C0.89528 0 0 0.89528 0 2L0 3L4 3C4 2.44764 4.44764 2 5 2C5.55236 2 6 2.44764 6 3L10 3L10 2Z" style="fill:#FFFFFF;fill-rule:evenodd;mix-blend-mode:normal;" transform="translate(3 3)" />
+        <path id="Oval" d="M0 0.5C0 0.223857 0.223857 0 0.5 0C0.776142 0 1 0.223857 1 0.5C1 0.776142 0.776142 1 0.5 1C0.223857 1 0 0.776142 0 0.5Z" style="fill:#FFFFFF;fill-rule:evenodd;mix-blend-mode:normal;" transform="translate(7.5 6)" />
+      </g>
+    </g>
+  </g>
+</svg>

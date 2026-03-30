@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://ccobu26edpdd0"]
+
+[ext_resource type="FontFile" uid="uid://dkgcthxe1pnxc" path="res://assets/fonts/DOTMATRI.TTF" id="1_s258q"]
+[ext_resource type="Script" uid="uid://c01lrs6agoydv" path="res://_scripts/player_selection_panel.gd" id="2_l510e"]
+
+[sub_resource type="Theme" id="Theme_y7yvm"]
+default_font = ExtResource("1_s258q")
+default_font_size = 20
+
+[node name="PlayerSetupManager" type="VBoxContainer" unique_id=355209301 node_paths=PackedStringArray("add_button", "remove_button", "start_button", "player_name_parent", "player_parent")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -127.5
+offset_top = -32.0
+offset_right = 127.5
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_y7yvm")
+script = ExtResource("2_l510e")
+add_button = NodePath("ButtonsVBox/AddRemoveHBox/Add_Button")
+remove_button = NodePath("ButtonsVBox/AddRemoveHBox/Remove_Button")
+start_button = NodePath("ButtonsVBox/StartButton")
+player_name_parent = NodePath("PlayerContainer")
+player_parent = NodePath("")
+
+[node name="PlayerContainer" type="VBoxContainer" parent="." unique_id=944851076]
+layout_mode = 2
+
+[node name="ButtonsVBox" type="VBoxContainer" parent="." unique_id=1787311308]
+layout_mode = 2
+
+[node name="AddRemoveHBox" type="HBoxContainer" parent="ButtonsVBox" unique_id=60118885]
+layout_mode = 2
+
+[node name="Add_Button" type="Button" parent="ButtonsVBox/AddRemoveHBox" unique_id=172426863]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Add Player"
+
+[node name="Remove_Button" type="Button" parent="ButtonsVBox/AddRemoveHBox" unique_id=1966459172]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Remove Player"
+
+[node name="StartButton" type="Button" parent="ButtonsVBox" unique_id=1893053465]
+layout_mode = 2
+text = "Start"

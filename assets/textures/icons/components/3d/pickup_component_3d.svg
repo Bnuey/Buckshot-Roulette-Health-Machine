@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="none" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <path id="path_1" d="M16 0L16 0L16 16L0 16L0 0L16 0Z" />
+    <rect id="rect_2" x="0" y="0" width="16" height="16" />
+    <clipPath id="clip_path_3">
+      <use xlink:href="#rect_2" />
+    </clipPath>
+  </defs>
+  <g id="pickup_component_3d" opacity="1" clip-path="url(#clip_path_3)">
+    <g>
+      <use xlink:href="#path_1" style="mix-blend-mode:normal;" />
+      <g>
+        <path id="Oval Subtract" d="M5 0C2.23858 0 0 2.23858 0 5C0 7.76142 2.23858 10 5 10C7.76142 10 10 7.76142 10 5C10 2.23858 7.76142 0 5 0ZM5.97964 3.65164L5 1.66667L4.02036 3.65164L1.82981 3.96994L3.41491 5.51503L3.04072 7.69672L5 6.66667L6.95928 7.69672L6.58509 5.51503L8.17019 3.96994L5.97964 3.65164Z" style="fill:#E87779;fill-rule:evenodd;mix-blend-mode:normal;" transform="translate(3 3)" />
+      </g>
+    </g>
+  </g>
+</svg>
